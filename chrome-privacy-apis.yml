@@ -1,0 +1,326 @@
+rules:
+  # ============================================================
+  # Activity / Browsing
+  # ============================================================
+  - id: chrome-history
+    message: "Uses chrome.history API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: activity
+      api: chrome.history
+    pattern: chrome.history.$METHOD(...)
+
+  - id: chrome-webnavigation
+    message: "Uses chrome.webNavigation API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: activity
+      api: chrome.webNavigation
+    pattern: chrome.webNavigation.$METHOD(...)
+
+  - id: chrome-tabs
+    message: "Uses chrome.tabs API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: activity
+      api: chrome.tabs
+    pattern: chrome.tabs.$METHOD(...)
+
+  - id: chrome-sessions
+    message: "Uses chrome.sessions API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: activity
+      api: chrome.sessions
+    pattern: chrome.sessions.$METHOD(...)
+
+  - id: chrome-topsites
+    message: "Uses chrome.topSites API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: activity
+      api: chrome.topSites
+    pattern: chrome.topSites.$METHOD(...)
+
+  - id: chrome-bookmarks
+    message: "Uses chrome.bookmarks API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: activity
+      api: chrome.bookmarks
+    pattern: chrome.bookmarks.$METHOD(...)
+
+  - id: chrome-browsingdata
+    message: "Uses chrome.browsingData API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: activity
+      api: chrome.browsingData
+    pattern: chrome.browsingData.$METHOD(...)
+
+  # ============================================================
+  # Cookies & Storage
+  # ============================================================
+  - id: chrome-cookies
+    message: "Uses chrome.cookies API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: cookies
+      api: chrome.cookies
+    pattern: chrome.cookies.$METHOD(...)
+
+  - id: chrome-storage
+    message: "Uses chrome.storage API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: storage
+      api: chrome.storage
+    patterns:
+      - pattern: chrome.storage.$METHOD(...)
+      - pattern: chrome.storage.local.$METHOD(...)
+      - pattern: chrome.storage.sync.$METHOD(...)
+      - pattern: chrome.storage.session.$METHOD(...)
+
+  # ============================================================
+  # Network
+  # ============================================================
+  - id: chrome-webrequest
+    message: "Uses chrome.webRequest API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: network
+      api: chrome.webRequest
+    patterns:
+      - pattern: chrome.webRequest.$METHOD(...)
+      - pattern: chrome.webRequestBlocking.$METHOD(...)
+
+  - id: chrome-declarativenetrequest
+    message: "Uses chrome.declarativeNetRequest API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: network
+      api: chrome.declarativeNetRequest
+    patterns:
+      - pattern: chrome.declarativeNetRequest.$METHOD(...)
+      - pattern: chrome.declarativeNetRequestWithHostAccess.$METHOD(...)
+
+  - id: chrome-proxy
+    message: "Uses chrome.proxy API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: network
+      api: chrome.proxy
+    pattern: chrome.proxy.$METHOD(...)
+
+  # ============================================================
+  # Identity
+  # ============================================================
+  - id: chrome-identity
+    message: "Uses chrome.identity API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: identity
+      api: chrome.identity
+    pattern: chrome.identity.$METHOD(...)
+
+  # ============================================================
+  # Injection / Scripting
+  # ============================================================
+  - id: chrome-scripting
+    message: "Uses chrome.scripting API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: injection
+      api: chrome.scripting
+    pattern: chrome.scripting.$METHOD(...)
+
+  - id: chrome-userscripts
+    message: "Uses chrome.userScripts API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: injection
+      api: chrome.userScripts
+    pattern: chrome.userScripts.$METHOD(...)
+
+  - id: chrome-tabs-executescript
+    message: "Uses chrome.tabs.executeScript (legacy injection)"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: injection
+      api: chrome.tabs.executeScript
+    pattern: chrome.tabs.executeScript(...)
+
+  # ============================================================
+  # High Privilege
+  # ============================================================
+  - id: chrome-debugger
+    message: "Uses chrome.debugger API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: high_privilege
+      api: chrome.debugger
+    pattern: chrome.debugger.$METHOD(...)
+
+  - id: chrome-devtools
+    message: "Uses chrome.devtools API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: high_privilege
+      api: chrome.devtools
+    pattern: chrome.devtools.$METHOD(...)
+
+  # ============================================================
+  # Media Capture
+  # ============================================================
+  - id: chrome-desktopcapture
+    message: "Uses chrome.desktopCapture API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: media
+      api: chrome.desktopCapture
+    pattern: chrome.desktopCapture.$METHOD(...)
+
+  - id: chrome-tabcapture
+    message: "Uses chrome.tabCapture API"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: media
+      api: chrome.tabCapture
+    pattern: chrome.tabCapture.$METHOD(...)
+
+  - id: chrome-pagecapture
+    message: "Uses chrome.pageCapture API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: media
+      api: chrome.pageCapture
+    pattern: chrome.pageCapture.$METHOD(...)
+
+  # ============================================================
+  # Settings & Permissions
+  # ============================================================
+  - id: chrome-contentsettings
+    message: "Uses chrome.contentSettings API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: settings
+      api: chrome.contentSettings
+    pattern: chrome.contentSettings.$METHOD(...)
+
+  - id: chrome-privacy
+    message: "Uses chrome.privacy API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: settings
+      api: chrome.privacy
+    pattern: chrome.privacy.$METHOD(...)
+
+  - id: chrome-permissions
+    message: "Uses chrome.permissions API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: settings
+      api: chrome.permissions
+    pattern: chrome.permissions.$METHOD(...)
+
+  # ============================================================
+  # Device / System
+  # ============================================================
+  - id: chrome-system
+    message: "Uses chrome.system API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: device
+      api: chrome.system
+    pattern: chrome.system.$METHOD(...)
+
+  - id: chrome-power
+    message: "Uses chrome.power API"
+    languages: [javascript, typescript]
+    severity: INFO
+    metadata:
+      category: device
+      api: chrome.power
+    pattern: chrome.power.$METHOD(...)
+
+  - id: chrome-enterprise
+    message: "Uses chrome.enterprise API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: device
+      api: chrome.enterprise
+    pattern: chrome.enterprise.$METHOD(...)
+
+  - id: chrome-instanceid
+    message: "Uses chrome.instanceID API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: device
+      api: chrome.instanceID
+    pattern: chrome.instanceID.$METHOD(...)
+
+  # ============================================================
+  # Other Sensitive
+  # ============================================================
+  - id: chrome-downloads
+    message: "Uses chrome.downloads API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: other
+      api: chrome.downloads
+    pattern: chrome.downloads.$METHOD(...)
+
+  - id: chrome-management
+    message: "Uses chrome.management API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: other
+      api: chrome.management
+    pattern: chrome.management.$METHOD(...)
+
+  - id: chrome-runtime
+    message: "Uses chrome.runtime API"
+    languages: [javascript, typescript]
+    severity: INFO
+    metadata:
+      category: other
+      api: chrome.runtime
+    pattern: chrome.runtime.$METHOD(...)
+
+  - id: chrome-filebrowserhandler
+    message: "Uses chrome.fileBrowserHandler API"
+    languages: [javascript, typescript]
+    severity: WARNING
+    metadata:
+      category: other
+      api: chrome.fileBrowserHandler
+    pattern: chrome.fileBrowserHandler.$METHOD(...)
