@@ -2,3 +2,4 @@ scripts_workflow.md
 results/
 unzip/
 zip/
+__pycache__/
