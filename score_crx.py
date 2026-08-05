@@ -242,9 +242,13 @@ def process_one_crx(crx: Path, unpack_dir: Path) -> Dict:
 
 def main():
     # ====================== PATHS ======================
-    crx_dir = Path(r"/home/akm/Documents/Static Analysis/downloaded_crx_no_dashboard_no_link")
-    unpack_dir = crx_dir / "unpacked"
-    results_dir = Path(r"/home/akm/Documents/Static Analysis/results_no_dashboard_no_link/permissions")
+    script_dir = Path(__file__).parent
+    crx_dir = script_dir / 'zip'
+    unpack_dir = script_dir / 'unzip'
+    results_dir = script_dir / 'results' / 'permission' 
+    # crx_dir = Path(r"/home/akm/Documents/Static Analysis/downloaded_crx_no_dashboard_no_link")
+    # unpack_dir = crx_dir / "unpacked"
+    # results_dir = Path(r"/home/akm/Documents/Static Analysis/results_no_dashboard_no_link/permissions")
     # ===================================================
 
     unpack_dir.mkdir(exist_ok=True)

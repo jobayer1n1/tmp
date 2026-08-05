@@ -204,11 +204,12 @@ def process_one_extension(item: Dict, unpacked_dir: Path,
 
 
 def main():
-    base_dir = Path(r"/home/akm/Documents/Static Analysis/downloaded_crx_no_dashboard_no_link")
+    base_dir = Path(__file__).parent
     unpacked_dir = base_dir / "unpacked"
-    domain_results_file = Path(r"/home/akm/Documents/Static Analysis/results/domains/domain_extraction_results.json")
-    extra_trackers_file = Path(r"/home/akm/Documents/Static Analysis/results/trackers/extra_trackers.txt")
-    results_dir = Path(r"/home/akm/Documents/Static Analysis/results/trackers")
+    domain_results_file = base_dir / "results" /  "domain" / "domain_extraction_results.json"
+    # extra_trackers_file = Path(r"/home/akm/Documents/Static Analysis/results/trackers/extra_trackers.txt")
+    extra_trackers_file = base_dir / 'results' / 'tracker' / 'extra_trackers.txt'
+    results_dir = base_dir / 'results' / 'tracker'
 
     results_dir.mkdir(parents=True, exist_ok=True)
 

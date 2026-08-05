@@ -100,10 +100,15 @@ def process_one_extension(ext_dir: Path, rules_file: Path) -> Dict:
 
 
 def main():
-    base_dir = Path(r"/home/akm/Documents/Static Analysis/downloaded_crx_no_dashboard_no_link")
-    unpacked_dir = base_dir / "unpacked"
-    rules_file = Path("/home/akm/Documents/Static Analysis/chrome-privacy-apis.yml")
-    results_dir = Path(r"/home/akm/Documents/Static Analysis/results/apis")
+
+    base_dir = Path(__file__).parent
+    unpacked_dir = base_dir / 'unzip'
+    rules_file = base_dir / 'chrome-privacy-apis.yml'
+    results_dir = base_dir / 'results' / 'api_detection'
+    # base_dir = Path(r"/home/akm/Documents/Static Analysis/downloaded_crx_no_dashboard_no_link")
+    # unpacked_dir = base_dir / "unpacked"
+    # rules_file = Path("/home/akm/Documents/Static Analysis/chrome-privacy-apis.yml")
+    # results_dir = Path(r"/home/akm/Documents/Static Analysis/results/apis")
 
     results_dir.mkdir(parents=True, exist_ok=True)
 

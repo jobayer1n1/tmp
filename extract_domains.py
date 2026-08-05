@@ -185,9 +185,9 @@ def analyze_extension(ext_dir: Path) -> Dict:
 
 
 def main():
-    base_dir = Path(r"/home/akm/Documents/Static Analysis/downloaded_crx_no_dashboard_no_link")
+    base_dir = Path(__file__).parent
     unpacked_dir = base_dir / "unpacked"
-    results_dir = Path(r"/home/akm/Documents/Static Analysis/results/domains")
+    results_dir = base_dir / 'results' / 'domain'
 
     results_dir.mkdir(parents=True, exist_ok=True)
 
