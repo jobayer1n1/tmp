@@ -1,0 +1,5 @@
+# Ignore agent customization files in this directory
+*.agent.md
+
+# Keep this gitignore tracked so the directory can remain ignored
+!.gitignore
