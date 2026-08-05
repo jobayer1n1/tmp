@@ -205,7 +205,7 @@ def process_one_extension(item: Dict, unpacked_dir: Path,
 
 def main():
     base_dir = Path(__file__).parent
-    unpacked_dir = base_dir / "unpacked"
+    unpacked_dir = base_dir / "unzip"
     domain_results_file = base_dir / "results" /  "domain" / "domain_extraction_results.json"
     # extra_trackers_file = Path(r"/home/akm/Documents/Static Analysis/results/trackers/extra_trackers.txt")
     extra_trackers_file = base_dir / 'results' / 'tracker' / 'extra_trackers.txt'

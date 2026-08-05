@@ -186,7 +186,7 @@ def analyze_extension(ext_dir: Path) -> Dict:
 
 def main():
     base_dir = Path(__file__).parent
-    unpacked_dir = base_dir / "unpacked"
+    unpacked_dir = base_dir / "unzip"
     results_dir = base_dir / 'results' / 'domain'
 
     results_dir.mkdir(parents=True, exist_ok=True)
